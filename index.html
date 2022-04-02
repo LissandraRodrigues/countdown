@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"> 
+    <title> Countdown </title>
+</head>
+    <body>
+
+        <main>
+
+            <h1> READY TO LAUNCH IN... </h1>
+
+            <div class="counter">
+                <div class="days">
+                    Dias
+                    <h3 id="days"> </h3>
+                </div>
+                <h3 id="semicolon-1"> </h3>
+
+                <div class="hours">
+                    Horas
+                    <h3 id="hours"> </h3>
+                </div>
+                <h3 id="semicolon-2"> </h3>
+
+                <div class="minutes">
+                    Minutos
+                    <h3 id="minutes"> </h3>
+                </div>
+                <h3 id="semicolon-3"> </h3>
+
+                <div class="seconds">
+                    Segundos
+                    <h3 id="seconds"> </h3>
+                </div>
+            </div>
+
+            <p>
+                Inscreva-se para saber mais sobre o lançamento.
+            </p>
+            
+            <div class="button-sign-up">
+                <a href="#abrirModal"> Inscreva-se </a>
+            </div>
+
+        </main>
+
+        <img class="rocket" src="./assets/rocket.svg" alt="Rocket">
+
+        <div id="abrirModal" class="modal">
+
+            <div>
+                
+                <a href="#fechar" title="Fechar" class="close"> X </a>
+                <h2> Inscreva-se </h2>
+                
+                <div class="field">
+                    <p> Nome </p>
+                    <input type="text">
+                </div>
+                    
+                <div class="field">
+                    <p> E-mail </p>
+                    <input type="email">
+                </div>
+
+                <div class="button-sign-up">
+                    <a href="#"> Enviar </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jun 4, 2022 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+            
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+            
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+        // Output the result in an element with id="demo"
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("semicolon-1").innerHTML = "&nbsp; : &nbsp;";
+        document.getElementById("hours").innerHTML = hours
+        document.getElementById("semicolon-2").innerHTML = "&nbsp; : &nbsp;";
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("semicolon-3").innerHTML = "&nbsp; : &nbsp;";
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+        }, 1000);
+    </script>
+</html>

@@ -1,0 +1,20 @@
+@media (max-width: 1220px) {
+  body {
+    flex-direction: column-reverse;
+  } 
+}
+
+@media (max-width: 620px) {
+    h1 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 30px;
+    }
+    
+    .counter {
+        margin-top: 10px;
+    }
+
+}
